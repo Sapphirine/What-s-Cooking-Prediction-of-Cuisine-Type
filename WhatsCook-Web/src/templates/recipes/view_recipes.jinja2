@@ -1,0 +1,26 @@
+{% extends "base.jinja2" %}
+{% block content %}
+    <div class="page-header">
+        <h1>
+            Recipes for {{ recipe.cuisine }} Food!
+            <img src= "{{ url_for('static', filename = 'css/pics/'+ recipe.pic) }}" width="180" height="180" style="float:right;">
+        </h1>
+        <h4 style="color: white">...</h4>
+        <h3>
+            You have:
+        </h3>
+        <h4>
+            {{ recipe.ingredients }}
+        </h4>
+        <h4 style="color: white">...</h4>
+    </div>
+    <div class="panel panel-default">
+        <div class="list-group">
+        {% for i in range(recipe.rec_name|length) %}
+            <a href="{{ recipe.rec_index[i] }}" class="list-group-item">
+                <h5 class="list-group-item-heading">{{ loop.index }}. {{ recipe.rec_name[i] }}</h5>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.jinja2" %}
+{% block content %}
+    <div class="jumbotron">
+        <h1>Recipe Recommender</h1>
+        <p>According to the ingredients you have</p>
+        <p>Predict most suitable cuisine and recommend recipes</p>
+        <form method="post">
+            <div class="form-group">
+                <label for="Ingredients"></label>
+                <input type="text" class="form-control" id="Ingredients" name="Ingredients" placeholder="eggs, onions, lettuce..."
+                aria-describedby="IngredientsHelp">
+                <span id="IngredientsHelp" class="help-block">Just enter some ingredients you have now...</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Search</button>
+        </form>
+    </div>
+{% endblock %}
